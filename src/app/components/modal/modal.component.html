@@ -21,8 +21,8 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                <button *ngIf="editado" type="button" (click)="edit()" class="btn btn-primary">Guardar</button>
-                <button *ngIf="!editado" type="button" (click)="add()" class="btn btn-primary">Agregar</button>
+                <button *ngIf="editingStatus" type="button" (click)="edit()" class="btn btn-primary">Guardar</button>
+                <button *ngIf="!editingStatus" type="button" (click)="add()" class="btn btn-primary">Agregar</button>
             </div>
         </div>
     </div>

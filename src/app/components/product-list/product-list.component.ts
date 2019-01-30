@@ -7,10 +7,10 @@ import { Product } from 'src/app/models/product.model';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  public editar = false;
   @Input() products: Product[] = [];
   @Output() removeItem: EventEmitter<number> = new EventEmitter<number>();
   @Output() editItem: EventEmitter<number> = new EventEmitter<number>();
+  public editingStatus = false;
   constructor() {}
 
   ngOnInit() {}
@@ -21,5 +21,6 @@ export class ProductListComponent implements OnInit {
   }
   public edit(idx: number) {
     this.editItem.emit(idx);
+    this.editingStatus = true;
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-modal',
@@ -6,9 +6,10 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./modal.component.css']
 })
 export class ModalComponent implements OnInit {
-  editado = false;
+  @Input() productIndex: number;
+  @Input() editingStatus = false;
   @Output() additem: EventEmitter<void> = new EventEmitter<void>();
-  @Output() editItem: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() editItem: EventEmitter<number> = new EventEmitter<number>();
   constructor() {}
 
   ngOnInit() {}
@@ -18,6 +19,8 @@ export class ModalComponent implements OnInit {
     this.additem.emit();
   }
   edit() {
-    this.editItem.emit(true);
+    console.log('editar');
+    this.editItem.emit(this.productIndex);
+    console.log(this.productIndex);
   }
 }

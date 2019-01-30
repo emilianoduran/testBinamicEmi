@@ -9,6 +9,7 @@ import { Product } from 'src/app/models/product.model';
 })
 export class ProductComponent implements OnInit {
   productsList: Product[] = [];
+  indexProductSelected: number;
   form = this.fb.group({
     id: [''],
     name: ['', Validators.required],
@@ -32,6 +33,7 @@ export class ProductComponent implements OnInit {
     this.productsList.splice(idx, 1);
   }
   public editProduct(idx: number) {
+    this.indexProductSelected = idx;
     const product: Product = this.productsList[idx];
     this.form.setValue(product);
     this.productsList[idx] = product;
