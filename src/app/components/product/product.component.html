@@ -1,0 +1,31 @@
+<form [formGroup]="form">
+    <div class="form-row">
+        <div class="col-12">
+            <label for="productName">Nombre</label>
+            <input formControlName="name" type="text" id="productName" class="form-control" placeholder="Nombre de Producto">
+            <!-- <small class="form-text text-muted">*Requerido.</small> -->
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-6">
+            <label for="productPrice">Precio</label>
+            <input formControlName="price" type="number" id="productPrice" class="form-control" placeholder="125.50">
+            <!-- <small class="form-text text-muted">*Requerido.</small> -->
+        </div>
+        <div class="col-6">
+            <label for="productPrice">Cantidad de Unidades</label>
+            <input formControlName="quantity" type="number" id="productPrice" class="form-control" placeholder="5">
+            <!-- <small class="form-text text-muted">*Requerido.</small> -->
+        </div>
+
+    </div>
+
+
+    <div class="form-row">
+        <div class="col-12">
+            <label for="productName">Descripción</label>
+            <textarea formControlName="description" type="text" id="productName" class="form-control" placeholder="Breve descripcion..."></textarea>
+            <!-- <small class="form-text text-muted">*Requerido.</small> -->
+        </div>
+    </div>
+</form>

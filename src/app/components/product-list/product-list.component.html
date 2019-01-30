@@ -1,0 +1,30 @@
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre de Producto</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products; let i=index;">
+            <th scope="row">{{i+1}}</th>
+            <td>{{product.name}}</td>
+            <td>{{product.quantity}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.description}}</td>
+            <td>
+                <div class="options" (click)="edit(i)" data-toggle="modal" data-target="#exampleModal">
+                    <i class="fas fa-edit cursor"></i>
+                </div>
+                <div class="options" (click)="remove(i)">
+                    <i class="fas fa-trash-alt ml-3 cursor text-danger"></i>
+                </div>
+            </td>
+        </tr>
+
+    </tbody>
+</table>

@@ -1,0 +1,16 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card  ml-5 mr-5 mt-5">
+                <div class="card-body">
+                    <h3 class="mb-3">Agregar Productos</h3>
+                    <app-modal (additem)="form.addProduct()" (editItem)="productList.deditado=$event">
+                        <app-product #form></app-product>
+                    </app-modal>
+                    <app-product-list #productList (removeItem)="form.deleteProduct($event)" (editItem)="form.editProduct($event)" [products]="form.productsList"></app-product-list>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
